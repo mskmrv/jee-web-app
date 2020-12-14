@@ -6,4 +6,19 @@
          version="4.0">
 
     <display-name>Archetype Created Web Application</display-name>
+    
+    <servlet>
+        <servlet-name>FirstServlet</servlet-name>
+        <servlet-class>ru.mskomarov.FirstServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>FirstServlet</servlet-name>
+        <url-pattern>/firstservlet</url-pattern>
+    </servlet-mapping>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/errorpage.jsp</location>
+    </error-page>
 </web-app>
