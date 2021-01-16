@@ -4,8 +4,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 
+@WebServlet(name = "CartServlet", urlPatterns = "/cart_servlet")
 public class CartServlet implements Servlet {
     private static Logger logger = LoggerFactory.getLogger(CartServlet.class);
     private transient ServletConfig servletConfig;
