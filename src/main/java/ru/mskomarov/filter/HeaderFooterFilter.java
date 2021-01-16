@@ -5,7 +5,7 @@ import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 
 @WebFilter(filterName = "HeaderFooter", urlPatterns = "/*")
-public class HttpFilter implements Filter {
+public class HeaderFooterFilter implements Filter {
     private transient FilterConfig filterConfig;
 
     @Override
@@ -16,10 +16,10 @@ public class HttpFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {
 //        response.getWriter().println("<h1>HEADER</h1>");
-        filterConfig.getServletContext().getRequestDispatcher("/header.html").include(request, response);
+        filterConfig.getServletContext().getRequestDispatcher("/header.jsp").include(request, response);
         filterChain.doFilter(request, response);
 //        response.getWriter().println("<h1>FOOTER</h1>");
-        filterConfig.getServletContext().getRequestDispatcher("/footer.html").include(request, response);
+        filterConfig.getServletContext().getRequestDispatcher("/footer.jsp").include(request, response);
     }
 
     @Override
