@@ -4,12 +4,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.servlet.*;
-import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 
-@WebServlet(name = "ProductServlet", urlPatterns = "/product_servlet")
-public class ProductServlet implements Servlet {
-    private static Logger logger = LoggerFactory.getLogger(ProductServlet.class);
+public class CartServlet implements Servlet {
+    private static Logger logger = LoggerFactory.getLogger(CartServlet.class);
     private transient ServletConfig servletConfig;
 
     @Override
@@ -24,13 +22,13 @@ public class ProductServlet implements Servlet {
 
     @Override
     public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
-        logger.info("New request to ProductServlet");
-        servletResponse.getWriter().println("<h1>Product Servlet content</h1>");
+        logger.info("New request to CartServlet");
+        servletResponse.getWriter().println("<h1>Cart Servlet content</h1>");
     }
 
     @Override
     public String getServletInfo() {
-        return "ProductServlet";
+        return "CartServlet";
     }
 
     @Override
